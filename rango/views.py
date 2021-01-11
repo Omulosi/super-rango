@@ -1,11 +1,14 @@
-import os
+"""
+
+"""
 
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from rango.models import *
-
 
 def index(request):
+    context_dict = {'boldmessage': "Crunchy, creamy, cookie, candy, cupcake!"}
+    return render(request, 'rango/index.html', context_dict)
 
-    return HttpResponse("Rango")
+def about(request):
+    return render(request, 'rango/about.html')
